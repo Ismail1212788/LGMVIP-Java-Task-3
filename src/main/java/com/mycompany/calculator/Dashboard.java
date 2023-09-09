@@ -8,6 +8,7 @@ import java.awt.Button;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JButton;
+import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.plaf.metal.MetalButtonUI;
 
@@ -15,14 +16,67 @@ import javax.swing.plaf.metal.MetalButtonUI;
  *
  * @author kali-i
  */
-public class Dashboard extends javax.swing.JFrame {
+public class Dashboard extends javax.swing.JFrame implements Calculate {
 
-    String number1="X";
-    boolean a=false,a1=false,a2=false,a3=false,a4=false,a5=false,a6=false,a7=false,a8=false;
-   public Dashboard() {
-        initComponents();    
-    }
+    
+    String num1="";
+    String num2="";
+    char op='-';
+    double result;
+    public Dashboard() {
+        initComponents();  
+   
+   }
+    
+   public void setResult(double a,double b){
 
+       switch(op){
+
+           case '+' ->{
+              result=add(a,b);
+           }
+           case '-' ->{
+              result=sub(a,b);
+           }
+           case '*' ->{
+              result=mul(a,b);
+           }
+           case '/' ->{
+              result=div(a,b);
+           }
+           case '%' ->{
+              result=per(a,b);
+           }
+       }
+   } 
+    
+   public void setInputs(String d){       
+       if (num1.contentEquals("")){
+           num1=d;
+       }
+       else{
+           double a=Double.parseDouble(num1);
+           double b=Double.parseDouble(this.jTextField1.getText());
+           setResult(a,b);
+           num1=String.valueOf(result);
+       }
+   } 
+
+   
+   
+   public void Addnumber(JTextField b){
+       this.jTextField1.setText(jTextField1.getText().concat(b.getText()));
+   }
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -73,6 +127,7 @@ public class Dashboard extends javax.swing.JFrame {
         jTextField45 = new RoundedCornerTextField();
         jTextField46 = new RoundedCornerTextField();
         jTextField1 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
 
         jButton10.setText("jButton10");
 
@@ -83,11 +138,11 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(500, 500));
         jPanel1.setLayout(null);
 
-        jLabel2.setFont(new java.awt.Font("Noto Sans", 1, 40)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Noto Sans", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Calculator");
+        jLabel2.setText("InternSavy Internship");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(150, -10, 250, 73);
+        jLabel2.setBounds(10, 130, 340, 73);
 
         jPanel3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
@@ -118,16 +173,31 @@ public class Dashboard extends javax.swing.JFrame {
         jTextField3.setText("/");
         jTextField3.setFocusable(false);
         jTextField3.setPreferredSize(new java.awt.Dimension(65, 25));
+        jTextField3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField3MouseClicked(evt);
+            }
+        });
         jPanel4.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, -1, 60));
 
         jTextField4.setEditable(false);
         jTextField4.setFont(new java.awt.Font("Cantarell", 1, 60)); // NOI18N
-        jTextField4.setForeground(new java.awt.Color(0, 255, 204));
+        jTextField4.setForeground(new java.awt.Color(255, 51, 51));
         jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField4.setText("c");
         jTextField4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jTextField4.setPreferredSize(new java.awt.Dimension(65, 25));
         jTextField4.setRequestFocusEnabled(false);
+        jTextField4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField4MouseClicked(evt);
+            }
+        });
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
         jPanel4.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, 60));
 
         jTextField5.setEditable(false);
@@ -137,18 +207,28 @@ public class Dashboard extends javax.swing.JFrame {
         jTextField5.setText("%");
         jTextField5.setFocusable(false);
         jTextField5.setPreferredSize(new java.awt.Dimension(65, 25));
+        jTextField5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField5MouseClicked(evt);
+            }
+        });
         jPanel4.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, -1, 60));
 
         jTextField6.setEditable(false);
         jTextField6.setFont(new java.awt.Font("Cantarell Extra Bold", 1, 24)); // NOI18N
-        jTextField6.setForeground(new java.awt.Color(0, 255, 204));
+        jTextField6.setForeground(new java.awt.Color(0, 204, 153));
         jTextField6.setText(" <==");
         jTextField6.setFocusable(false);
         jTextField6.setPreferredSize(new java.awt.Dimension(65, 50));
+        jTextField6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField6MouseClicked(evt);
+            }
+        });
         jPanel4.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, -1, 60));
 
         jPanel2.add(jPanel4);
-        jPanel4.setBounds(0, 0, 390, 100);
+        jPanel4.setBounds(0, 0, 390, 80);
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -161,6 +241,16 @@ public class Dashboard extends javax.swing.JFrame {
         jTextField31.setFocusable(false);
         jTextField31.setPreferredSize(new java.awt.Dimension(65, 25));
         jTextField31.setRequestFocusEnabled(false);
+        jTextField31.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField31MouseClicked(evt);
+            }
+        });
+        jTextField31.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField31ActionPerformed(evt);
+            }
+        });
         jPanel5.add(jTextField31, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, 60));
 
         jTextField32.setEditable(false);
@@ -169,6 +259,16 @@ public class Dashboard extends javax.swing.JFrame {
         jTextField32.setText("8");
         jTextField32.setFocusable(false);
         jTextField32.setPreferredSize(new java.awt.Dimension(65, 25));
+        jTextField32.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField32MouseClicked(evt);
+            }
+        });
+        jTextField32.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField32ActionPerformed(evt);
+            }
+        });
         jPanel5.add(jTextField32, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, -1, 60));
 
         jTextField33.setEditable(false);
@@ -177,6 +277,16 @@ public class Dashboard extends javax.swing.JFrame {
         jTextField33.setText("9");
         jTextField33.setFocusable(false);
         jTextField33.setPreferredSize(new java.awt.Dimension(65, 50));
+        jTextField33.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField33MouseClicked(evt);
+            }
+        });
+        jTextField33.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField33ActionPerformed(evt);
+            }
+        });
         jPanel5.add(jTextField33, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, -1, 60));
 
         jTextField34.setEditable(false);
@@ -186,6 +296,11 @@ public class Dashboard extends javax.swing.JFrame {
         jTextField34.setText("X");
         jTextField34.setFocusable(false);
         jTextField34.setPreferredSize(new java.awt.Dimension(65, 25));
+        jTextField34.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField34MouseClicked(evt);
+            }
+        });
         jPanel5.add(jTextField34, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, -1, 60));
 
         jPanel2.add(jPanel5);
@@ -201,6 +316,16 @@ public class Dashboard extends javax.swing.JFrame {
         jTextField35.setFocusable(false);
         jTextField35.setPreferredSize(new java.awt.Dimension(65, 25));
         jTextField35.setRequestFocusEnabled(false);
+        jTextField35.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField35MouseClicked(evt);
+            }
+        });
+        jTextField35.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField35ActionPerformed(evt);
+            }
+        });
         jPanel6.add(jTextField35, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, 60));
 
         jTextField36.setEditable(false);
@@ -209,6 +334,16 @@ public class Dashboard extends javax.swing.JFrame {
         jTextField36.setText("5");
         jTextField36.setFocusable(false);
         jTextField36.setPreferredSize(new java.awt.Dimension(65, 25));
+        jTextField36.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField36MouseClicked(evt);
+            }
+        });
+        jTextField36.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField36ActionPerformed(evt);
+            }
+        });
         jPanel6.add(jTextField36, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, -1, 60));
 
         jTextField37.setEditable(false);
@@ -217,6 +352,16 @@ public class Dashboard extends javax.swing.JFrame {
         jTextField37.setText("6");
         jTextField37.setFocusable(false);
         jTextField37.setPreferredSize(new java.awt.Dimension(65, 50));
+        jTextField37.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField37MouseClicked(evt);
+            }
+        });
+        jTextField37.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField37ActionPerformed(evt);
+            }
+        });
         jPanel6.add(jTextField37, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, -1, 60));
 
         jTextField38.setEditable(false);
@@ -226,6 +371,16 @@ public class Dashboard extends javax.swing.JFrame {
         jTextField38.setText("-");
         jTextField38.setFocusable(false);
         jTextField38.setPreferredSize(new java.awt.Dimension(65, 25));
+        jTextField38.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField38MouseClicked(evt);
+            }
+        });
+        jTextField38.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField38KeyPressed(evt);
+            }
+        });
         jPanel6.add(jTextField38, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, -1, 60));
 
         jPanel2.add(jPanel6);
@@ -241,6 +396,16 @@ public class Dashboard extends javax.swing.JFrame {
         jTextField39.setFocusable(false);
         jTextField39.setPreferredSize(new java.awt.Dimension(65, 25));
         jTextField39.setRequestFocusEnabled(false);
+        jTextField39.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField39MouseClicked(evt);
+            }
+        });
+        jTextField39.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField39ActionPerformed(evt);
+            }
+        });
         jPanel7.add(jTextField39, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, 60));
 
         jTextField40.setEditable(false);
@@ -249,6 +414,16 @@ public class Dashboard extends javax.swing.JFrame {
         jTextField40.setText("2");
         jTextField40.setFocusable(false);
         jTextField40.setPreferredSize(new java.awt.Dimension(65, 25));
+        jTextField40.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField40MouseClicked(evt);
+            }
+        });
+        jTextField40.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField40ActionPerformed(evt);
+            }
+        });
         jPanel7.add(jTextField40, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, -1, 60));
 
         jTextField41.setEditable(false);
@@ -257,6 +432,16 @@ public class Dashboard extends javax.swing.JFrame {
         jTextField41.setText("3");
         jTextField41.setFocusable(false);
         jTextField41.setPreferredSize(new java.awt.Dimension(65, 50));
+        jTextField41.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField41MouseClicked(evt);
+            }
+        });
+        jTextField41.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField41ActionPerformed(evt);
+            }
+        });
         jPanel7.add(jTextField41, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, -1, 60));
 
         jTextField42.setEditable(false);
@@ -266,6 +451,16 @@ public class Dashboard extends javax.swing.JFrame {
         jTextField42.setText("+");
         jTextField42.setFocusable(false);
         jTextField42.setPreferredSize(new java.awt.Dimension(65, 25));
+        jTextField42.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField42MouseClicked(evt);
+            }
+        });
+        jTextField42.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField42ActionPerformed(evt);
+            }
+        });
         jPanel7.add(jTextField42, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, -1, 60));
 
         jPanel2.add(jPanel7);
@@ -314,6 +509,16 @@ public class Dashboard extends javax.swing.JFrame {
         jTextField43.setFocusable(false);
         jTextField43.setPreferredSize(new java.awt.Dimension(65, 25));
         jTextField43.setRequestFocusEnabled(false);
+        jTextField43.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField43MouseClicked(evt);
+            }
+        });
+        jTextField43.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField43ActionPerformed(evt);
+            }
+        });
         jPanel8.add(jTextField43, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, 60));
 
         jTextField44.setEditable(false);
@@ -322,14 +527,35 @@ public class Dashboard extends javax.swing.JFrame {
         jTextField44.setText("0");
         jTextField44.setFocusable(false);
         jTextField44.setPreferredSize(new java.awt.Dimension(65, 25));
+        jTextField44.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField44MouseClicked(evt);
+            }
+        });
+        jTextField44.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField44ActionPerformed(evt);
+            }
+        });
         jPanel8.add(jTextField44, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, -1, 60));
 
         jTextField45.setEditable(false);
         jTextField45.setFont(new java.awt.Font("Cantarell", 1, 60)); // NOI18N
+        jTextField45.setForeground(new java.awt.Color(51, 0, 51));
         jTextField45.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField45.setText(".");
         jTextField45.setFocusable(false);
         jTextField45.setPreferredSize(new java.awt.Dimension(65, 50));
+        jTextField45.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField45MouseClicked(evt);
+            }
+        });
+        jTextField45.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField45ActionPerformed(evt);
+            }
+        });
         jPanel8.add(jTextField45, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, -1, 60));
 
         jTextField46.setEditable(false);
@@ -339,6 +565,11 @@ public class Dashboard extends javax.swing.JFrame {
         jTextField46.setText("=");
         jTextField46.setFocusable(false);
         jTextField46.setPreferredSize(new java.awt.Dimension(65, 25));
+        jTextField46.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField46MouseClicked(evt);
+            }
+        });
         jPanel8.add(jTextField46, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, -1, 60));
 
         jPanel2.add(jPanel8);
@@ -348,8 +579,16 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel2.setBounds(400, 100, 390, 420);
 
         jTextField1.setEditable(false);
+        jTextField1.setFont(new java.awt.Font("Cantarell", 1, 28)); // NOI18N
+        jTextField1.setFocusable(false);
         jPanel1.add(jTextField1);
         jTextField1.setBounds(400, 10, 390, 80);
+
+        jLabel3.setFont(new java.awt.Font("Noto Sans", 1, 40)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Calculator");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(150, -10, 250, 73);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -365,6 +604,161 @@ public class Dashboard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jTextField39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField39ActionPerformed
+
+    }//GEN-LAST:event_jTextField39ActionPerformed
+
+    private void jTextField43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField43ActionPerformed
+
+    }//GEN-LAST:event_jTextField43ActionPerformed
+
+    private void jTextField44ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField44ActionPerformed
+
+    }//GEN-LAST:event_jTextField44ActionPerformed
+
+    private void jTextField45ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField45ActionPerformed
+
+    }//GEN-LAST:event_jTextField45ActionPerformed
+
+    private void jTextField40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField40ActionPerformed
+
+    }//GEN-LAST:event_jTextField40ActionPerformed
+
+    private void jTextField41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField41ActionPerformed
+
+    }//GEN-LAST:event_jTextField41ActionPerformed
+
+    private void jTextField35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField35ActionPerformed
+    }//GEN-LAST:event_jTextField35ActionPerformed
+
+    private void jTextField36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField36ActionPerformed
+    }//GEN-LAST:event_jTextField36ActionPerformed
+
+    private void jTextField37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField37ActionPerformed
+    }//GEN-LAST:event_jTextField37ActionPerformed
+
+    private void jTextField31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField31ActionPerformed
+    }//GEN-LAST:event_jTextField31ActionPerformed
+
+    private void jTextField32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField32ActionPerformed
+    }//GEN-LAST:event_jTextField32ActionPerformed
+
+    private void jTextField33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField33ActionPerformed
+
+    }//GEN-LAST:event_jTextField33ActionPerformed
+
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        
+    }//GEN-LAST:event_jTextField4ActionPerformed
+
+    private void jTextField39MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField39MouseClicked
+     Addnumber(jTextField39);
+    }//GEN-LAST:event_jTextField39MouseClicked
+
+    private void jTextField40MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField40MouseClicked
+         Addnumber(jTextField40);
+    }//GEN-LAST:event_jTextField40MouseClicked
+
+    private void jTextField41MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField41MouseClicked
+ Addnumber(jTextField41);
+    }//GEN-LAST:event_jTextField41MouseClicked
+
+    private void jTextField43MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField43MouseClicked
+ Addnumber(jTextField43);
+    }//GEN-LAST:event_jTextField43MouseClicked
+
+    private void jTextField44MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField44MouseClicked
+ Addnumber(jTextField44);
+    }//GEN-LAST:event_jTextField44MouseClicked
+
+    private void jTextField45MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField45MouseClicked
+ Addnumber(jTextField45);
+    }//GEN-LAST:event_jTextField45MouseClicked
+
+    private void jTextField35MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField35MouseClicked
+ Addnumber(jTextField35);
+    }//GEN-LAST:event_jTextField35MouseClicked
+
+    private void jTextField36MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField36MouseClicked
+ Addnumber(jTextField36);
+    }//GEN-LAST:event_jTextField36MouseClicked
+
+    private void jTextField37MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField37MouseClicked
+ Addnumber(jTextField37);
+    }//GEN-LAST:event_jTextField37MouseClicked
+
+    private void jTextField31MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField31MouseClicked
+ Addnumber(jTextField31);
+    }//GEN-LAST:event_jTextField31MouseClicked
+
+    private void jTextField32MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField32MouseClicked
+ Addnumber(jTextField32);
+    }//GEN-LAST:event_jTextField32MouseClicked
+
+    private void jTextField33MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField33MouseClicked
+ Addnumber(jTextField33);
+    }//GEN-LAST:event_jTextField33MouseClicked
+
+    private void jTextField4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField4MouseClicked
+this.jTextField1.setText("");
+num1="";
+num2="";
+        
+    }//GEN-LAST:event_jTextField4MouseClicked
+
+    private void jTextField5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField5MouseClicked
+op='%';
+        setInputs(this.jTextField1.getText());
+        this.jTextField1.setText("");
+    }//GEN-LAST:event_jTextField5MouseClicked
+
+    private void jTextField46MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField46MouseClicked
+        num2=this.jTextField1.getText();
+        setResult(Double.parseDouble(num1),Double.parseDouble(num2));
+        this.jTextField1.setText(String.valueOf(result));
+    }//GEN-LAST:event_jTextField46MouseClicked
+
+    private void jTextField42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField42ActionPerformed
+       
+    }//GEN-LAST:event_jTextField42ActionPerformed
+
+    private void jTextField42MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField42MouseClicked
+       op='+';
+        setInputs(this.jTextField1.getText());
+        this.jTextField1.setText("");
+    }//GEN-LAST:event_jTextField42MouseClicked
+
+    private void jTextField38KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField38KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField38KeyPressed
+
+    private void jTextField38MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField38MouseClicked
+       op='-';
+        setInputs(this.jTextField1.getText());
+        this.jTextField1.setText("");
+    }//GEN-LAST:event_jTextField38MouseClicked
+
+    private void jTextField34MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField34MouseClicked
+        op='*';
+        setInputs(this.jTextField1.getText());
+        this.jTextField1.setText("");
+    }//GEN-LAST:event_jTextField34MouseClicked
+
+    private void jTextField3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField3MouseClicked
+        op='/';
+        setInputs(this.jTextField1.getText());
+        this.jTextField1.setText("");
+    }//GEN-LAST:event_jTextField3MouseClicked
+
+    private void jTextField6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField6MouseClicked
+    try{
+    this.jTextField1.setText(this.jTextField1.getText().substring(0, this.jTextField1.getText().length()-1));
+    }catch(Exception e){
+        
+    }
+    }//GEN-LAST:event_jTextField6MouseClicked
+
+    
      
     
     /**
@@ -406,6 +800,7 @@ public class Dashboard extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton10;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
@@ -446,4 +841,30 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public double add(double a, double b) {
+        return a+b;
+    }
+
+    @Override
+    public double sub(double a, double b) {
+        return a-b;
+    }
+
+    @Override
+    public double div(double a, double b) {
+        return a/b;
+    }
+
+    @Override
+    public double mul(double a, double b) {
+        return a*b;
+    }
+
+    @Override
+    public double per(double a, double b) {
+        double d=a/100;
+        return d*b;
+    }
 }
