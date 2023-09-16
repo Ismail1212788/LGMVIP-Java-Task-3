@@ -23,6 +23,8 @@ public class Dashboard extends javax.swing.JFrame implements Calculate {
     String num2="";
     char op='-';
     double result;
+   String m="";
+    
     public Dashboard() {
         initComponents();  
    
@@ -96,21 +98,33 @@ public class Dashboard extends javax.swing.JFrame implements Calculate {
         jTextField4 = new RoundedCornerTextField();
         jTextField5 = new RoundedCornerTextField();
         jTextField6 = new RoundedCornerTextField();
+        jTextField7 = new RoundedCornerTextField();
+        jTextField8 = new RoundedCornerTextField();
+        jTextField9 = new RoundedCornerTextField();
         jPanel5 = new javax.swing.JPanel();
         jTextField31 = new RoundedCornerTextField();
         jTextField32 = new RoundedCornerTextField();
         jTextField33 = new RoundedCornerTextField();
         jTextField34 = new RoundedCornerTextField();
+        jTextField10 = new RoundedCornerTextField();
+        jTextField11 = new RoundedCornerTextField();
+        jTextField12 = new RoundedCornerTextField();
         jPanel6 = new javax.swing.JPanel();
         jTextField35 = new RoundedCornerTextField();
         jTextField36 = new RoundedCornerTextField();
         jTextField37 = new RoundedCornerTextField();
         jTextField38 = new RoundedCornerTextField();
+        jTextField13 = new RoundedCornerTextField();
+        jTextField14 = new RoundedCornerTextField();
+        jTextField15 = new RoundedCornerTextField();
         jPanel7 = new javax.swing.JPanel();
         jTextField39 = new RoundedCornerTextField();
         jTextField40 = new RoundedCornerTextField();
         jTextField41 = new RoundedCornerTextField();
         jTextField42 = new RoundedCornerTextField();
+        jTextField16 = new RoundedCornerTextField();
+        jTextField17 = new RoundedCornerTextField();
+        jTextField18 = new RoundedCornerTextField();
         jPanel9 = new javax.swing.JPanel();
         jTextField23 = new javax.swing.JTextField();
         jTextField24 = new javax.swing.JTextField();
@@ -126,8 +140,12 @@ public class Dashboard extends javax.swing.JFrame implements Calculate {
         jTextField44 = new RoundedCornerTextField();
         jTextField45 = new RoundedCornerTextField();
         jTextField46 = new RoundedCornerTextField();
+        jTextField19 = new RoundedCornerTextField();
+        jTextField20 = new RoundedCornerTextField();
+        jTextField21 = new RoundedCornerTextField();
         jTextField1 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         jButton10.setText("jButton10");
 
@@ -138,11 +156,11 @@ public class Dashboard extends javax.swing.JFrame implements Calculate {
         jPanel1.setPreferredSize(new java.awt.Dimension(500, 500));
         jPanel1.setLayout(null);
 
-        jLabel2.setFont(new java.awt.Font("Noto Sans", 1, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Noto Sans", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("InternSavy Internship");
+        jLabel2.setText("Lets Grow More Internship");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(10, 130, 340, 73);
+        jLabel2.setBounds(10, 230, 260, 73);
 
         jPanel3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
@@ -150,7 +168,7 @@ public class Dashboard extends javax.swing.JFrame implements Calculate {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 140, Short.MAX_VALUE)
+            .addGap(0, 260, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -158,7 +176,7 @@ public class Dashboard extends javax.swing.JFrame implements Calculate {
         );
 
         jPanel1.add(jPanel3);
-        jPanel3.setBounds(0, 0, 140, 120);
+        jPanel3.setBounds(10, 0, 260, 120);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(null);
@@ -167,10 +185,10 @@ public class Dashboard extends javax.swing.JFrame implements Calculate {
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTextField3.setEditable(false);
-        jTextField3.setFont(new java.awt.Font("Cantarell", 1, 40)); // NOI18N
+        jTextField3.setFont(new java.awt.Font("Cantarell", 1, 25)); // NOI18N
         jTextField3.setForeground(new java.awt.Color(0, 255, 204));
         jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField3.setText("/");
+        jTextField3.setText("TAN");
         jTextField3.setFocusable(false);
         jTextField3.setPreferredSize(new java.awt.Dimension(65, 25));
         jTextField3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -178,7 +196,12 @@ public class Dashboard extends javax.swing.JFrame implements Calculate {
                 jTextField3MouseClicked(evt);
             }
         });
-        jPanel4.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, -1, 60));
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, -1, 60));
 
         jTextField4.setEditable(false);
         jTextField4.setFont(new java.awt.Font("Cantarell", 1, 60)); // NOI18N
@@ -227,8 +250,65 @@ public class Dashboard extends javax.swing.JFrame implements Calculate {
         });
         jPanel4.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, -1, 60));
 
+        jTextField7.setEditable(false);
+        jTextField7.setFont(new java.awt.Font("Cantarell", 1, 40)); // NOI18N
+        jTextField7.setForeground(new java.awt.Color(0, 255, 204));
+        jTextField7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField7.setText("/");
+        jTextField7.setFocusable(false);
+        jTextField7.setPreferredSize(new java.awt.Dimension(65, 25));
+        jTextField7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField7MouseClicked(evt);
+            }
+        });
+        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField7ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, -1, 60));
+
+        jTextField8.setEditable(false);
+        jTextField8.setFont(new java.awt.Font("Cantarell", 1, 25)); // NOI18N
+        jTextField8.setForeground(new java.awt.Color(0, 255, 204));
+        jTextField8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField8.setText("SIN");
+        jTextField8.setFocusable(false);
+        jTextField8.setPreferredSize(new java.awt.Dimension(65, 25));
+        jTextField8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField8MouseClicked(evt);
+            }
+        });
+        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField8ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, -1, 60));
+
+        jTextField9.setEditable(false);
+        jTextField9.setFont(new java.awt.Font("Cantarell", 1, 25)); // NOI18N
+        jTextField9.setForeground(new java.awt.Color(0, 255, 204));
+        jTextField9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField9.setText(" COS");
+        jTextField9.setFocusable(false);
+        jTextField9.setPreferredSize(new java.awt.Dimension(65, 25));
+        jTextField9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField9MouseClicked(evt);
+            }
+        });
+        jTextField9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField9ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, -1, 60));
+
         jPanel2.add(jPanel4);
-        jPanel4.setBounds(0, 0, 390, 80);
+        jPanel4.setBounds(0, 0, 590, 80);
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -301,10 +381,57 @@ public class Dashboard extends javax.swing.JFrame implements Calculate {
                 jTextField34MouseClicked(evt);
             }
         });
+        jTextField34.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField34ActionPerformed(evt);
+            }
+        });
         jPanel5.add(jTextField34, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, -1, 60));
 
+        jTextField10.setEditable(false);
+        jTextField10.setFont(new java.awt.Font("Cantarell", 1, 16)); // NOI18N
+        jTextField10.setForeground(new java.awt.Color(0, 255, 204));
+        jTextField10.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField10.setText("COSEC");
+        jTextField10.setFocusable(false);
+        jTextField10.setPreferredSize(new java.awt.Dimension(65, 25));
+        jTextField10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField10MouseClicked(evt);
+            }
+        });
+        jPanel5.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, -1, 60));
+
+        jTextField11.setEditable(false);
+        jTextField11.setFont(new java.awt.Font("Cantarell", 1, 25)); // NOI18N
+        jTextField11.setForeground(new java.awt.Color(0, 255, 204));
+        jTextField11.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField11.setText("SEC");
+        jTextField11.setFocusable(false);
+        jTextField11.setPreferredSize(new java.awt.Dimension(65, 25));
+        jTextField11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField11MouseClicked(evt);
+            }
+        });
+        jPanel5.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, -1, 60));
+
+        jTextField12.setEditable(false);
+        jTextField12.setFont(new java.awt.Font("Cantarell", 1, 25)); // NOI18N
+        jTextField12.setForeground(new java.awt.Color(0, 255, 204));
+        jTextField12.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField12.setText("COT");
+        jTextField12.setFocusable(false);
+        jTextField12.setPreferredSize(new java.awt.Dimension(65, 25));
+        jTextField12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField12MouseClicked(evt);
+            }
+        });
+        jPanel5.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, -1, 60));
+
         jPanel2.add(jPanel5);
-        jPanel5.setBounds(0, 80, 390, 80);
+        jPanel5.setBounds(0, 80, 590, 80);
 
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -383,8 +510,50 @@ public class Dashboard extends javax.swing.JFrame implements Calculate {
         });
         jPanel6.add(jTextField38, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, -1, 60));
 
+        jTextField13.setEditable(false);
+        jTextField13.setFont(new java.awt.Font("Cantarell", 1, 25)); // NOI18N
+        jTextField13.setForeground(new java.awt.Color(0, 255, 204));
+        jTextField13.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField13.setText("X^2");
+        jTextField13.setFocusable(false);
+        jTextField13.setPreferredSize(new java.awt.Dimension(65, 25));
+        jTextField13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField13MouseClicked(evt);
+            }
+        });
+        jPanel6.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, -1, 60));
+
+        jTextField14.setEditable(false);
+        jTextField14.setFont(new java.awt.Font("Cantarell", 1, 25)); // NOI18N
+        jTextField14.setForeground(new java.awt.Color(0, 255, 204));
+        jTextField14.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField14.setText("X^3");
+        jTextField14.setFocusable(false);
+        jTextField14.setPreferredSize(new java.awt.Dimension(65, 25));
+        jTextField14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField14MouseClicked(evt);
+            }
+        });
+        jPanel6.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, -1, 60));
+
+        jTextField15.setEditable(false);
+        jTextField15.setFont(new java.awt.Font("Cantarell", 1, 40)); // NOI18N
+        jTextField15.setForeground(new java.awt.Color(0, 255, 204));
+        jTextField15.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField15.setText("√");
+        jTextField15.setFocusable(false);
+        jTextField15.setPreferredSize(new java.awt.Dimension(65, 25));
+        jTextField15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField15MouseClicked(evt);
+            }
+        });
+        jPanel6.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, -1, 60));
+
         jPanel2.add(jPanel6);
-        jPanel6.setBounds(0, 160, 390, 80);
+        jPanel6.setBounds(0, 160, 590, 80);
 
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -463,8 +632,50 @@ public class Dashboard extends javax.swing.JFrame implements Calculate {
         });
         jPanel7.add(jTextField42, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, -1, 60));
 
+        jTextField16.setEditable(false);
+        jTextField16.setFont(new java.awt.Font("Cantarell", 1, 25)); // NOI18N
+        jTextField16.setForeground(new java.awt.Color(0, 255, 204));
+        jTextField16.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField16.setText("log");
+        jTextField16.setFocusable(false);
+        jTextField16.setPreferredSize(new java.awt.Dimension(65, 25));
+        jTextField16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField16MouseClicked(evt);
+            }
+        });
+        jPanel7.add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, -1, 60));
+
+        jTextField17.setEditable(false);
+        jTextField17.setFont(new java.awt.Font("Cantarell", 1, 25)); // NOI18N
+        jTextField17.setForeground(new java.awt.Color(0, 255, 204));
+        jTextField17.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField17.setText("ln");
+        jTextField17.setFocusable(false);
+        jTextField17.setPreferredSize(new java.awt.Dimension(65, 25));
+        jTextField17.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField17MouseClicked(evt);
+            }
+        });
+        jPanel7.add(jTextField17, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, -1, 60));
+
+        jTextField18.setEditable(false);
+        jTextField18.setFont(new java.awt.Font("Cantarell", 1, 25)); // NOI18N
+        jTextField18.setForeground(new java.awt.Color(0, 255, 204));
+        jTextField18.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField18.setText("|x|");
+        jTextField18.setFocusable(false);
+        jTextField18.setPreferredSize(new java.awt.Dimension(65, 25));
+        jTextField18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField18MouseClicked(evt);
+            }
+        });
+        jPanel7.add(jTextField18, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, -1, 60));
+
         jPanel2.add(jPanel7);
-        jPanel7.setBounds(0, 240, 390, 80);
+        jPanel7.setBounds(0, 240, 590, 80);
 
         jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -572,23 +783,76 @@ public class Dashboard extends javax.swing.JFrame implements Calculate {
         });
         jPanel8.add(jTextField46, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, -1, 60));
 
+        jTextField19.setEditable(false);
+        jTextField19.setFont(new java.awt.Font("Cantarell", 1, 20)); // NOI18N
+        jTextField19.setForeground(new java.awt.Color(0, 255, 204));
+        jTextField19.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField19.setText("10^X");
+        jTextField19.setFocusable(false);
+        jTextField19.setPreferredSize(new java.awt.Dimension(65, 25));
+        jTextField19.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField19MouseClicked(evt);
+            }
+        });
+        jTextField19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField19ActionPerformed(evt);
+            }
+        });
+        jPanel8.add(jTextField19, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, -1, 60));
+
+        jTextField20.setEditable(false);
+        jTextField20.setFont(new java.awt.Font("Cantarell", 1, 25)); // NOI18N
+        jTextField20.setForeground(new java.awt.Color(0, 255, 204));
+        jTextField20.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField20.setText("n!");
+        jTextField20.setFocusable(false);
+        jTextField20.setPreferredSize(new java.awt.Dimension(65, 25));
+        jTextField20.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField20MouseClicked(evt);
+            }
+        });
+        jPanel8.add(jTextField20, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, -1, 60));
+
+        jTextField21.setEditable(false);
+        jTextField21.setFont(new java.awt.Font("Cantarell", 1, 25)); // NOI18N
+        jTextField21.setForeground(new java.awt.Color(0, 255, 204));
+        jTextField21.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField21.setText("π");
+        jTextField21.setFocusable(false);
+        jTextField21.setPreferredSize(new java.awt.Dimension(65, 25));
+        jTextField21.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField21MouseClicked(evt);
+            }
+        });
+        jPanel8.add(jTextField21, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, -1, 60));
+
         jPanel2.add(jPanel8);
-        jPanel8.setBounds(0, 320, 390, 80);
+        jPanel8.setBounds(0, 320, 590, 80);
 
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(400, 100, 390, 420);
+        jPanel2.setBounds(280, 100, 590, 420);
 
         jTextField1.setEditable(false);
         jTextField1.setFont(new java.awt.Font("Cantarell", 1, 28)); // NOI18N
         jTextField1.setFocusable(false);
         jPanel1.add(jTextField1);
-        jTextField1.setBounds(400, 10, 390, 80);
+        jTextField1.setBounds(280, 10, 590, 80);
 
         jLabel3.setFont(new java.awt.Font("Noto Sans", 1, 40)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Calculator");
+        jLabel3.setText("Scientific");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(150, -10, 250, 73);
+        jLabel3.setBounds(30, 130, 250, 50);
+
+        jLabel4.setFont(new java.awt.Font("Noto Sans", 1, 40)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Calculator");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(20, 180, 250, 50);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -713,9 +977,118 @@ op='%';
     }//GEN-LAST:event_jTextField5MouseClicked
 
     private void jTextField46MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField46MouseClicked
-        num2=this.jTextField1.getText();
+        switch(m){
+            case "sin"->{
+                double r=this.Sin(this.extractDigits(this.jTextField1.getText()));
+                this.jTextField1.setText(String.valueOf(r));
+                  m="";
+                }
+             case "cos"->{
+                double r=this.Cos(this.extractDigits(this.jTextField1.getText()));
+                this.jTextField1.setText(String.valueOf(r));
+                  m="";
+                }
+            
+              case "tan"->{
+                double r=this.Tan(this.extractDigits(this.jTextField1.getText()));
+                this.jTextField1.setText(String.valueOf(r));
+                  m="";
+                }
+             case "cosec"->{
+                double r=this.Cosec(this.extractDigits(this.jTextField1.getText()));
+                this.jTextField1.setText(String.valueOf(r));
+                  m="";
+                }
+              
+              case "sec"->{
+                double r=this.Sec(this.extractDigits(this.jTextField1.getText()));
+                this.jTextField1.setText(String.valueOf(r));
+                  m="";
+                }
+              
+               case "cot"->{
+                double r=this.Cot(this.extractDigits(this.jTextField1.getText()));
+                this.jTextField1.setText(String.valueOf(r));
+                  m="";
+                }
+              
+                case "pow2"->{
+               
+                double r=this.SP2(Double.parseDouble(num1));
+                this.jTextField1.setText(String.valueOf(r));
+                  m="";
+                  num1="";
+                }
+              
+                 case "pow3"->{
+               
+                double r=this.SP3(Double.parseDouble(num1));
+                this.jTextField1.setText(String.valueOf(r));
+                  m="";
+                  num1="";
+                }
+                 case "sqrt"->{
+                double r=this.underroot(this.extractDigits(this.jTextField1.getText()));
+                this.jTextField1.setText(String.valueOf(r));
+                  m="";
+                }
+             
+               case "log"->{
+                double r=this.log(this.extractDigits(this.jTextField1.getText()));
+                this.jTextField1.setText(String.valueOf(r));
+                  m="";
+                }
+             
+              case "ln"->{
+                double r=this.ln(this.extractDigits(this.jTextField1.getText()));
+                this.jTextField1.setText(String.valueOf(r));
+                  m="";
+                }
+              
+               case "mod"->{
+                double r=this.mod(this.extractDigits(this.jTextField1.getText()));
+                this.jTextField1.setText(String.valueOf(r));
+                  m="";
+                }
+               
+                 case "tenp"->{
+                double r=this.powerx(this.extractDigits(this.jTextField1.getText().substring(3)));
+                this.jTextField1.setText(String.valueOf(r));
+                  m="";
+                }
+                   case "!"->{
+                double r=this.factorial(this.extractDigits(this.jTextField1.getText()));
+                this.jTextField1.setText(String.valueOf(r));
+                  m="";
+                }
+                   
+                
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+            
+            
+            
+            
+            
+            
+            case ""->{
+                        num2=this.jTextField1.getText();
         setResult(Double.parseDouble(num1),Double.parseDouble(num2));
+        
         this.jTextField1.setText(String.valueOf(result));
+            }
+        }
+
+      
     }//GEN-LAST:event_jTextField46MouseClicked
 
     private void jTextField42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField42ActionPerformed
@@ -745,9 +1118,8 @@ op='%';
     }//GEN-LAST:event_jTextField34MouseClicked
 
     private void jTextField3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField3MouseClicked
-        op='/';
-        setInputs(this.jTextField1.getText());
-        this.jTextField1.setText("");
+        this.jTextField1.setText("tan ");
+        m="tan";
     }//GEN-LAST:event_jTextField3MouseClicked
 
     private void jTextField6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField6MouseClicked
@@ -757,6 +1129,111 @@ op='%';
         
     }
     }//GEN-LAST:event_jTextField6MouseClicked
+
+    private void jTextField7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField7MouseClicked
+        op='/';
+        setInputs(this.jTextField1.getText());
+        this.jTextField1.setText("");
+    }//GEN-LAST:event_jTextField7MouseClicked
+
+    private void jTextField8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField8MouseClicked
+    
+        this.jTextField1.setText("Sin ");
+        m="sin";
+    }//GEN-LAST:event_jTextField8MouseClicked
+
+    private void jTextField9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField9MouseClicked
+        this.jTextField1.setText("cos ");
+        m="cos";
+    }//GEN-LAST:event_jTextField9MouseClicked
+
+    private void jTextField10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField10MouseClicked
+        this.jTextField1.setText("cosec ");
+        m="cosec";
+    }//GEN-LAST:event_jTextField10MouseClicked
+
+    private void jTextField11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField11MouseClicked
+ this.jTextField1.setText("sec ");
+        m="sec";       
+    }//GEN-LAST:event_jTextField11MouseClicked
+
+    private void jTextField12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField12MouseClicked
+        this.jTextField1.setText("cot ");
+        m="cot";       
+    }//GEN-LAST:event_jTextField12MouseClicked
+
+    private void jTextField13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField13MouseClicked
+         num1=this.jTextField1.getText();
+        this.jTextField1.setText(this.jTextField1.getText()+"^2");
+        
+        m="pow2";    
+    }//GEN-LAST:event_jTextField13MouseClicked
+
+    private void jTextField14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField14MouseClicked
+          num1=this.jTextField1.getText();
+        this.jTextField1.setText(this.jTextField1.getText()+"^3");
+        
+        m="pow3";    
+    }//GEN-LAST:event_jTextField14MouseClicked
+
+    private void jTextField15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField15MouseClicked
+        this.jTextField1.setText("√ ");
+        m="sqrt";  
+    }//GEN-LAST:event_jTextField15MouseClicked
+
+    private void jTextField16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField16MouseClicked
+  this.jTextField1.setText("log ");
+        m="log"; 
+    }//GEN-LAST:event_jTextField16MouseClicked
+
+    private void jTextField17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField17MouseClicked
+  this.jTextField1.setText("ln ");
+        m="ln"; 
+    }//GEN-LAST:event_jTextField17MouseClicked
+
+    private void jTextField18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField18MouseClicked
+  this.jTextField1.setText("mod");
+        m="mod"; 
+    }//GEN-LAST:event_jTextField18MouseClicked
+
+    private void jTextField19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField19MouseClicked
+  this.jTextField1.setText("10^");
+        m="tenp"; 
+    }//GEN-LAST:event_jTextField19MouseClicked
+
+    private void jTextField20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField20MouseClicked
+          this.jTextField1.setText("!");
+        m="!"; 
+    }//GEN-LAST:event_jTextField20MouseClicked
+
+    private void jTextField21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField21MouseClicked
+  this.jTextField1.setText(this.jTextField1.getText()+"3.14");
+ 
+    }//GEN-LAST:event_jTextField21MouseClicked
+
+    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+        
+    }//GEN-LAST:event_jTextField8ActionPerformed
+
+    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+
+    }//GEN-LAST:event_jTextField7ActionPerformed
+
+    private void jTextField34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField34ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField34ActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField9ActionPerformed
+
+    private void jTextField19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField19ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField19ActionPerformed
 
     
      
@@ -801,6 +1278,7 @@ op='%';
     private javax.swing.JButton jButton10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
@@ -812,6 +1290,18 @@ op='%';
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField12;
+    private javax.swing.JTextField jTextField13;
+    private javax.swing.JTextField jTextField14;
+    private javax.swing.JTextField jTextField15;
+    private javax.swing.JTextField jTextField16;
+    private javax.swing.JTextField jTextField17;
+    private javax.swing.JTextField jTextField18;
+    private javax.swing.JTextField jTextField19;
+    private javax.swing.JTextField jTextField20;
+    private javax.swing.JTextField jTextField21;
     private javax.swing.JTextField jTextField23;
     private javax.swing.JTextField jTextField24;
     private javax.swing.JTextField jTextField25;
@@ -840,6 +1330,9 @@ op='%';
     private javax.swing.JTextField jTextField46;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 
     @Override
@@ -867,4 +1360,101 @@ op='%';
         double d=a/100;
         return d*b;
     }
+
+    @Override
+    public double Sin(double a) {
+         return Math.sin(a);
+    }
+
+    @Override
+    public double Cos(double a) {
+        return Math.cos(a);
+    }
+
+    @Override
+    public double Tan(double a) {
+     return Math.tan(a);
+    }
+
+    @Override
+    public double Cosec(double a) {
+         return 1 / Math.sin(a);
+    }
+
+    @Override
+    public double Sec(double a) {
+         return 1 / Math.cos(a);
+    }
+
+    @Override
+    public double Cot(double a) {
+           return 1 / Math.tan(a);
+    }
+
+    @Override
+    public double SP2(double a) {
+         return Math.pow(a, 2);
+        }
+
+    @Override
+    public double SP3(double a) {
+          return Math.pow(a, 3);
+     }
+
+    @Override
+    public double underroot(double a) {
+         return Math.sqrt(a);
+    }
+
+    @Override
+    public double log(double a) {
+         return Math.log10(a);
+    }
+
+    @Override
+    public double ln(double a) {
+             return Math.log(a);
+    }
+
+    @Override
+    public double mod(double a) {
+            return Math.abs(a);
+    }
+
+    @Override
+    public double powerx(double a) {
+            return Math.pow(10, a);
+        }
+
+    @Override
+    public double factorial(double a) {
+        if (a < 0) {
+           
+        }
+        if (a == 0 || a == 1) {
+            return 1;
+        }
+        double r = 1;
+        for (int i = 2; i <= a; i++) {
+            r *= i;
+        }
+        return r;
+    }
+
+    @Override
+    public double pie(double a) {
+            return Math.PI;
+    }
+    
+    public double extractDigits(String input) {
+    StringBuilder digits = new StringBuilder();
+
+    for (char c : input.toCharArray()) {
+        if (Character.isDigit(c)) {
+            digits.append(c); // Append the digit to the result
+        }
+    }
+
+    return Double.parseDouble(digits.toString());
+}
 }
